@@ -22,7 +22,7 @@ func RunHelix(input [][]int) (output []int) {
 	var row, col, round int
 
 	for i := 0; i < expectedLen; i++ {
-		if orient[LEFT] && col == 0+round { // LEFT -> UP
+		if orient[LEFT] && col == round { // LEFT -> UP
 			orient[LEFT] = false
 			orient[UP] = true
 		}
@@ -34,7 +34,7 @@ func RunHelix(input [][]int) (output []int) {
 			orient[DOWN] = false
 			orient[LEFT] = true
 		}
-		if orient[UP] && row == 0+round { // UP -> RIGHT
+		if orient[UP] && row == round { // UP -> RIGHT
 			orient[UP] = false
 			orient[RIGHT] = true
 			round++
